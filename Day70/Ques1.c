@@ -23,17 +23,18 @@ int main() {
     for (int i = 0; i < m; i++) {
         scanf("%d %d %d", &edges[i].u, &edges[i].v, &edges[i].w);
     }
+//starting point for the shoetest path
 
     int source;
     scanf("%d", &source);
 
     int dist[n];
-
+// intialization set all distances = infinite source dist = 0
     for (int i = 0; i < n; i++)
         dist[i] = INT_MAX;
 
     dist[source] = 0;
-
+// inner loop go through all edges outer loop  relaxation condition
     for (int i = 1; i <= n - 1; i++) {
         for (int j = 0; j < m; j++) {
             int u = edges[j].u;
